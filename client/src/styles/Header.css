@@ -1,0 +1,18 @@
+.header-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 7vh;
+  background-color: #061021;
+  padding: 1% 7%;
+}
+
+.title-first-word {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.title-second-word {
+  color: aqua;
+  font-size: 2rem;
+}

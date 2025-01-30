@@ -1,0 +1,40 @@
+.waldo-game-board {
+  display: flex;
+  padding: 1% 7%;
+}
+
+.game-waldo-image {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Target box for the dropdown menu */
+.target-box {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  list-style-type: none;
+  padding: 8px;
+  margin: 0;
+  border: 3px solid black;
+}
+
+.dropdown-menu li {
+  padding: 1px;
+  cursor: pointer;
+}
+
+.small-pic {
+  width: 30px;
+  height: 50px;
+}
+
+.dropdown-menu li:hover {
+  background-color: black;
+}

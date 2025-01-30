@@ -1,21 +1,24 @@
-import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import GameWaldo from "./components/GameWaldo";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
+import "./styles/App.css";
 
-function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:5000/")
-      .then((res) => res.text())
-      .then((data) => setMessage(data))
-      .catch((err) => console.error("Error:", err));
-  }, []);
-
+const App = () => {
   return (
-    <div>
-      <h1>Client working</h1>
-      <p>Backend Message: {message}</p>
-    </div>
+    <Router>
+      <div className="general-content">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/game-waldo" element={<GameWaldo />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
-}
-
+};
 export default App;
