@@ -1,0 +1,60 @@
+/* Home.css */
+.select-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.select-map-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: white;
+  text-align: center;
+}
+
+.select-map-waldo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.select-map-waldo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.select-map-waldo-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.select-map-waldo-image:hover {
+  transform: scale(1.05);
+}
+
+.select-map-waldo p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.select-map-waldo p:hover {
+  color: #0073e6;
+  cursor: pointer;
+}

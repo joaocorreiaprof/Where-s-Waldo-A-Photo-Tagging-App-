@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import GameWaldo from "./components/GameWaldo";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
+import GameWon from "./components/GameWon";
 import "./styles/App.css";
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/game-waldo" element={<GameWaldo />} />
+            <Route path="/game-won" element={<GameWon />} />
           </Routes>
         </main>
         <Footer />
