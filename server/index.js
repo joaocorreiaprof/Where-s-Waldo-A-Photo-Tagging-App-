@@ -13,11 +13,9 @@ const robotRoutes = require("./routes/robotRoutes");
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the client's build directory
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
-// Sample route
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
