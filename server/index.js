@@ -5,35 +5,26 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-//Import routes
+// Import routes
 const waldoRoutes = require("./routes/waldoRoutes");
 const marioRoutes = require("./routes/marioRoutes");
 const robotRoutes = require("./routes/robotRoutes");
 
 app.use(cors());
-
-//Middleware
 app.use(express.json());
 
-//Sample route
+// Serve static files from the client's build directory
+app.use(express.static(path.join(__dirname, "../client/dist")));
+
+// Sample route
 app.get("/", (req, res) => {
-  res.send("Server is running!");
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
-//App uses
+// App uses
 app.use("/api/waldo", waldoRoutes);
 app.use("/api/mario", marioRoutes);
 app.use("/api/robot", robotRoutes);
-
-// Serve static files from the client/dist directory
-const clientBuildPath = path.join(__dirname, "../client/dist");
-app.use(express.static(clientBuildPath));
-
-// Handle all other routes with the frontend's index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(clientBuildPath, "index.html"));
-  console.log("Static files served from:", clientBuildPath);
-});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
