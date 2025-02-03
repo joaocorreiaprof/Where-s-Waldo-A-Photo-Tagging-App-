@@ -9,10 +9,24 @@
 
 .title-first-word {
   color: white;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 .title-second-word {
   color: aqua;
-  font-size: 2rem;
+  font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+  .header-component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+
+  .title-first-word,
+  .title-second-word {
+    font-size: 3.5rem;
+  }
 }

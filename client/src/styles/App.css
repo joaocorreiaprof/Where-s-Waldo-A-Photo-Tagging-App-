@@ -19,3 +19,18 @@ html {
 .general-content > main {
   flex: 1;
 }
+
+@media (max-width: 768px) {
+  body,
+  html {
+    font-size: 14px;
+  }
+
+  .general-content {
+    flex-direction: column;
+  }
+
+  .general-content > main {
+    padding: 10px;
+  }
+}

@@ -1,17 +1,17 @@
-import "../styles/GameWaldo.css";
+import "../styles/GameRobot.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GameWon from "../components/GameWon";
 
-const GameWaldo = () => {
+const GameRobot = () => {
   const navigate = useNavigate();
   const [menuVisible, setMenuVisible] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
   const [clickedCoords, setClickedCoords] = useState(null);
   const [foundCharacters, setFoundCharacters] = useState({
-    waldo: false,
-    dog: false,
-    evil: false,
+    mike: false,
+    leonardo: false,
+    obelix: false,
   });
 
   const [startTime, setStartTime] = useState(null);
@@ -58,7 +58,7 @@ const GameWaldo = () => {
 
   const handleCharacterSelection = (character) => {
     if (!clickedCoords) return;
-    fetch("/api/waldo/validate-selection", {
+    fetch("/api/robot/validate-selection", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -93,30 +93,30 @@ const GameWaldo = () => {
   }, [allCharactersFound, foundCharacters, navigate, elapsedTime]);
 
   return (
-    <div className="waldo-game-board">
+    <div className="robot-game-board">
       {allCharactersFound ? (
         <GameWon />
       ) : (
         <>
           <div className="mario-characters-to-find">
             <div className="characters-container">
+              <img src="../images/mike.jpg" alt="Mike image" className="find" />
               <img
-                src="../images/waldo-pic.jpg"
-                alt="Waldo image"
+                src="../images/leonardo.jpg"
+                alt="Leonardo image"
                 className="find"
               />
-              <img src="../images/dog.jpg" alt="Dog image" className="find" />
               <img
-                src="../images/evil.jpg"
+                src="../images/obelix.jpg"
                 alt="Obelix image"
                 className="find"
               />
             </div>
           </div>
           <img
-            src="../images/waldo.jpg"
-            alt="Waldo game"
-            className="game-waldo-image"
+            src="../images/robot.jpg"
+            alt="robot game"
+            className="game-robot-image"
             onClick={(event) => {
               event.stopPropagation();
               handleClick(event);
@@ -131,24 +131,24 @@ const GameWaldo = () => {
               }}
             >
               <ul className="dropdown-menu">
-                <li onClick={() => handleCharacterSelection("waldo")}>
+                <li onClick={() => handleCharacterSelection("mike")}>
                   <img
-                    src="../images/waldo-pic.jpg"
-                    alt="A picture of waldo"
+                    src="../images/mike.jpg"
+                    alt="Mike picture"
                     className="small-pic"
                   />
                 </li>
-                <li onClick={() => handleCharacterSelection("dog")}>
+                <li onClick={() => handleCharacterSelection("leonardo")}>
                   <img
-                    src="../images/dog.jpg"
-                    alt="A dog picture"
+                    src="../images/leonardo.jpg"
+                    alt="Leonardo picture"
                     className="small-pic"
                   />
                 </li>
-                <li onClick={() => handleCharacterSelection("evil")}>
+                <li onClick={() => handleCharacterSelection("obelix")}>
                   <img
-                    src="../images/evil.jpg"
-                    alt="An evil man picture"
+                    src="../images/obelix.jpg"
+                    alt="Obelix picture"
                     className="small-pic"
                   />
                 </li>
@@ -161,4 +161,4 @@ const GameWaldo = () => {
   );
 };
 
-export default GameWaldo;
+export default GameRobot;

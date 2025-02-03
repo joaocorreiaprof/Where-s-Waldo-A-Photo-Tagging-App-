@@ -1,11 +1,13 @@
 /* Home.css */
 .select-map {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   min-height: 80vh;
   padding: 20px;
   box-sizing: border-box;
+  gap: 30px;
 }
 
 .select-map-title {
@@ -16,45 +18,61 @@
   text-align: center;
 }
 
-.select-map-waldo {
+.select-map-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 15px;
-  margin-bottom: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  width: 280px;
+  width: 240px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.select-map-waldo:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.select-map-waldo-image {
+.select-map-image {
   max-width: 100%;
-  height: auto;
+  height: 300px;
+  width: 270px;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
 
-.select-map-waldo-image:hover {
-  transform: scale(1.05);
-}
-
-.select-map-waldo p {
+.select-map-div p {
   margin-top: 10px;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #333;
+  color: white;
   text-align: center;
 }
 
-.select-map-waldo p:hover {
+.select-map-div p:hover {
   color: #0073e6;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .select-map {
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .select-map-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .select-map-div {
+    width: 100%;
+    margin: 0;
+  }
+
+  .select-map-image {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .select-map-div p {
+    font-size: 1.3rem;
+  }
 }

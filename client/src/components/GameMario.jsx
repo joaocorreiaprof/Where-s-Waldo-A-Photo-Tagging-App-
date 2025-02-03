@@ -1,17 +1,17 @@
-import "../styles/GameWaldo.css";
+import "../styles/GameMario.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GameWon from "../components/GameWon";
 
-const GameWaldo = () => {
+const GameMario = () => {
   const navigate = useNavigate();
   const [menuVisible, setMenuVisible] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
   const [clickedCoords, setClickedCoords] = useState(null);
   const [foundCharacters, setFoundCharacters] = useState({
-    waldo: false,
-    dog: false,
-    evil: false,
+    mario: false,
+    wario: false,
+    peach: false,
   });
 
   const [startTime, setStartTime] = useState(null);
@@ -58,7 +58,7 @@ const GameWaldo = () => {
 
   const handleCharacterSelection = (character) => {
     if (!clickedCoords) return;
-    fetch("/api/waldo/validate-selection", {
+    fetch("/api/mario/validate-selection", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -93,7 +93,7 @@ const GameWaldo = () => {
   }, [allCharactersFound, foundCharacters, navigate, elapsedTime]);
 
   return (
-    <div className="waldo-game-board">
+    <div className="mario-game-board">
       {allCharactersFound ? (
         <GameWon />
       ) : (
@@ -101,22 +101,26 @@ const GameWaldo = () => {
           <div className="mario-characters-to-find">
             <div className="characters-container">
               <img
-                src="../images/waldo-pic.jpg"
-                alt="Waldo image"
+                src="../images/mario-pic.jpg"
+                alt="Mario image"
                 className="find"
               />
-              <img src="../images/dog.jpg" alt="Dog image" className="find" />
               <img
-                src="../images/evil.jpg"
-                alt="Obelix image"
+                src="../images/wario.jpg"
+                alt="Wario image"
+                className="find"
+              />
+              <img
+                src="../images/peach.jpg"
+                alt="Princess Peach image"
                 className="find"
               />
             </div>
           </div>
           <img
-            src="../images/waldo.jpg"
-            alt="Waldo game"
-            className="game-waldo-image"
+            src="../images/mario.jpg"
+            alt="mario game"
+            className="game-mario-image"
             onClick={(event) => {
               event.stopPropagation();
               handleClick(event);
@@ -131,24 +135,24 @@ const GameWaldo = () => {
               }}
             >
               <ul className="dropdown-menu">
-                <li onClick={() => handleCharacterSelection("waldo")}>
+                <li onClick={() => handleCharacterSelection("mario")}>
                   <img
-                    src="../images/waldo-pic.jpg"
-                    alt="A picture of waldo"
+                    src="../images/mario-pic.jpg"
+                    alt="A picture of Mario"
                     className="small-pic"
                   />
                 </li>
-                <li onClick={() => handleCharacterSelection("dog")}>
+                <li onClick={() => handleCharacterSelection("wario")}>
                   <img
-                    src="../images/dog.jpg"
-                    alt="A dog picture"
+                    src="../images/wario.jpg"
+                    alt="Wario picture"
                     className="small-pic"
                   />
                 </li>
-                <li onClick={() => handleCharacterSelection("evil")}>
+                <li onClick={() => handleCharacterSelection("peach")}>
                   <img
-                    src="../images/evil.jpg"
-                    alt="An evil man picture"
+                    src="../images/peach.jpg"
+                    alt="Princess Peach picture"
                     className="small-pic"
                   />
                 </li>
@@ -161,4 +165,4 @@ const GameWaldo = () => {
   );
 };
 
-export default GameWaldo;
+export default GameMario;

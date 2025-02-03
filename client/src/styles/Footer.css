@@ -32,3 +32,20 @@
 .github-icon:hover {
   transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+  .footer-component {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+  }
+
+  .footer-component a {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .github-icon {
+    margin-left: 0;
+  }
+}

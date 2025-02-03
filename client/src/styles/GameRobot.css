@@ -1,10 +1,10 @@
-.waldo-game-board {
+.robot-game-board {
   display: flex;
   flex-direction: column;
   padding: 1% 7%;
 }
 
-.game-waldo-image {
+.game-robot-image {
   width: 100%;
   cursor: pointer;
 }
@@ -54,59 +54,33 @@
 }
 
 @media (max-width: 768px) {
-  .waldo-game-board {
-    flex-direction: column;
-    padding: 10px;
+  .game-waldo-board,
+  .game-robot-board,
+  .game-mario-board {
+    padding: 5% 5%;
   }
 
-  .game-waldo-image {
+  .game-waldo-image,
+  .game-robot-image,
+  .game-mario-image {
     width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: contain;
   }
 
   .find {
-    height: 100px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 15px 0;
   }
 
   .characters-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-    gap: 50px;
-  }
-
-  /* Target box for the dropdown menu */
-  .target-box {
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    white-space: nowrap;
-  }
-
-  /* Dropdown menu styling */
-  .dropdown-menu {
-    list-style-type: none;
-    padding: 8px;
-    margin: 0;
-    border: 3px solid black;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 
   .dropdown-menu li {
-    padding: 1px;
-    cursor: pointer;
+    font-size: 0.9rem;
   }
 
   .small-pic {
-    width: 30px;
-    height: 50px;
-  }
-
-  .dropdown-menu li:hover {
-    background-color: black;
+    width: 25px;
+    height: 40px;
   }
 }
