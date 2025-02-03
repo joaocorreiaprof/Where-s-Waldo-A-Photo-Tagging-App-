@@ -1,4 +1,6 @@
 const express = require("express");
+const cors = require("cors");
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -7,6 +9,8 @@ const PORT = process.env.PORT || 5000;
 const waldoRoutes = require("./routes/waldoRoutes");
 const marioRoutes = require("./routes/marioRoutes");
 const robotRoutes = require("./routes/robotRoutes");
+
+app.use(cors());
 
 //Middleware
 app.use(express.json());
