@@ -26,7 +26,7 @@ app.use("/api/mario", marioRoutes);
 app.use("/api/robot", robotRoutes);
 
 // Serve static files from the client/dist directory
-const clientBuildPath = path.join(__dirname, "../../client/dist"); // Adjust path for deployment
+const clientBuildPath = path.join(__dirname, "../client/dist");
 app.use(express.static(clientBuildPath));
 
 // Handle all other routes with the frontend's index.html
