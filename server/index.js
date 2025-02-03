@@ -11,18 +11,13 @@ const robotRoutes = require("./routes/robotRoutes");
 //Middleware
 app.use(express.json());
 
-//Sample route
-app.get("/", (req, res) => {
-  res.send("Server is running!");
-});
-
 //App uses
 app.use("/api/waldo", waldoRoutes);
 app.use("/api/mario", marioRoutes);
 app.use("/api/robot", robotRoutes);
 
 // Serve static files from the client/dist directory
-const clientBuildPath = path.join(__dirname, "../../client/dist");
+const clientBuildPath = path.join(__dirname, "../client/dist");
 app.use(express.static(clientBuildPath));
 
 // Handle all other routes with the frontend's index.html
