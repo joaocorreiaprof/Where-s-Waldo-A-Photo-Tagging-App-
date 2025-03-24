@@ -6,7 +6,7 @@ This project is a web-based "Where's Waldo"-style game where users must find hid
 
 ## Live
 
-https://where-s-waldo-a-photo-tagging-ap-production.up.railway.app/
+Live: https://where-s-waldo-a-photo-tagging-ap-production.up.railway.app/
 
 ## Features
 
